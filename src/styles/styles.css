@@ -120,6 +120,27 @@ body {
 }
 
 
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
 /* Footer styling */
 .footer {
     padding: 1rem 24rem;

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Navbar } from '../components/navbar.jsx';
 import { Preview } from '../components/Preview.jsx';
+import { ScrollToTop } from '../components/ScrollToTop.jsx';
+import { Contact } from '../components/Contact.jsx';
 
 import '../styles/styles.css';
 
@@ -20,6 +22,9 @@ const Home = () => {
             <Preview />
 
 
+            <ScrollToTop />
+
+            <Contact />
 
             <footer className="footer">
                 <div className="footer-name">
