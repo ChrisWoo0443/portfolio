@@ -18,7 +18,7 @@ body {
 /* Navbar styling */
 .navbar {
     background-color: white;
-    padding: 3rem 8rem;
+    padding: 2.5rem 24rem;
     top: 0;
     left: 0;
     right: 0;
@@ -32,9 +32,11 @@ body {
 
 .navbar-logo {
     font-size: 16 px;
-    font-weight: 700;
-    color: var(--text);
+    font-weight: bolder;
+    color: rgb(17, 17, 17);
     text-decoration: none;
+    height: 32px;
+    width: 91px;
 }
 
 .navbar-items {
@@ -54,25 +56,40 @@ body {
 
 /* Header styling */
 .header {
-    padding: 1rem 8rem;
+    padding: 1rem 24rem;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 30vh;
 }
 
 .header-logo {
     font-size: 24px;
-    color: lightgrey;
+    color: rgb(136, 136, 136);
 }
 .header-title {
     font-size: 72px;
     color: var(--text);
 }
 
+.preview-container {
+    padding: 1rem 24rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* Preview Images styling */
+.preview-large {
+    border-radius: 12px;
+    width: 1fr;
+    height: 450;
+}
+
 /* Footer styling */
 .footer {
-    padding: 1rem 8rem;
+    padding: 1rem 24rem;
     display: flex;
     top: 0;
     left: 0;
