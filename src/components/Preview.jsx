@@ -16,7 +16,6 @@ export function Preview() {
         const newThumbnails = [...thumbnails];
         const clickedImage = newThumbnails[index];
 
-        // Swap the clicked image with the main image
         newThumbnails[index] = mainImage;
         setMainImage(clickedImage);
         setThumbnails(newThumbnails);

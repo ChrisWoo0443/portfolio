@@ -5,7 +5,7 @@ export function ScrollToTop() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setVisible(window.scrollY > 20); // Show after 300px scroll
+            setVisible(window.scrollY > 20); 
         };
 
         window.addEventListener("scroll", handleScroll);

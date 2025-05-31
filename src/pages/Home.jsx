@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navbar } from '../components/navbar.jsx';
 import { Preview } from '../components/Preview.jsx';
-import { ScrollToTop } from '../components/ScrollToTop.jsx';
 import { Contact } from '../components/Contact.jsx';
+import { ScrollToTop } from '../components/ScrollToTop.jsx';
 
 import '../styles/styles.css';
 
@@ -11,20 +11,36 @@ const Home = () => {
         <div className = "home-container">
             <Navbar />
             
-            <header className="header" role="banner">
+            {/* <header className="header" role="banner">
                 <div className="header-logo">Personal Collection</div>
                 <div className="header-content">
                     <h1 className="header-title">Project Showcase</h1>
                 </div>
-            </header>
+            </header> */}
+
+            <div className="scroll-container">
+                <section className='section' id='home'>
+                    <header className="section-header" role="banner">
+                        <div className="header-logo">Personal Collection</div>
+                        <div className="header-content">
+                            <h1 className="header-title">Project Showcase</h1>
+                        </div>
+                    </header>
+                </section>
+
+                <section className='section' id='preview'>
+                    <Preview />
+                </section>
+
+                <section className='section' id='contact'>
+                    <Contact />
+                </section>
+            </div>
 
 
-            <Preview />
-
-
+            {/* <Preview />
+            <Contact /> */}
             <ScrollToTop />
-
-            <Contact />
 
             <footer className="footer">
                 <div className="footer-name">
