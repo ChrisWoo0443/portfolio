@@ -4,6 +4,13 @@ import smallImage1 from "../images/finger_paint.png";
 import smallImage2 from "../images/natural_query.png";
 import smallImage3 from "../images/sms.png";
 
+const imageLinks = {
+    [largeImage]: "https://your-site.com/jobgpt",
+    [smallImage1]: "https://your-site.com/finger-paint",
+    [smallImage2]: "https://your-site.com/natural-query",
+    [smallImage3]: "https://your-site.com/sms",
+};
+
 export function Preview() {
     const [mainImage, setMainImage] = useState(largeImage);
     const [thumbnails, setThumbnails] = useState([
@@ -23,7 +30,18 @@ export function Preview() {
 
     return (
         <div className="preview-container">
-            <img src={mainImage} alt="Main Preview" className="preview-large" />
+
+            <a
+                href={imageLinks[mainImage]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="preview-link-button"
+            >
+                View Project
+            </a>
+
+
+            <img src={mainImage} alt="Main Preview" className="preview-large shadows" />
 
             <div className="preview-small">
                 {thumbnails.map((img, index) => (
@@ -31,7 +49,7 @@ export function Preview() {
                         <img
                             src={img}
                             alt={`Preview ${index}`}
-                            className="preview-small-image"
+                            className="preview-small-image shadows"
                             onClick={() => handleImageSwap(index)}
                         />
                     </div>

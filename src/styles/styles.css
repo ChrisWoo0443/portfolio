@@ -15,19 +15,6 @@ body {
     background: var(--background);
 }
 
-.scroll-container {
-    scroll-snap-type: y mandatory;
-    /* overflow-y: scroll; */
-    /* height: 100vh; */
-}
-  
-.section {
-    scroll-snap-align: start;
-    /* height: 90vh; */
-}
-
-
-
 /* Navbar styling */
 .navbar {
     background-color: white;
@@ -50,11 +37,13 @@ body {
     text-decoration: none;
     height: 32px;
     width: 91px;
+    transition: all 0.5s ease;
+
 }
 
 .navbar-logo:hover {
     transform: scale(1.1);
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
 }
 
 .navbar-items {
@@ -92,6 +81,10 @@ body {
 
 
 /* Preview Images styling */
+.shadows {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 20px;
+}
+
 .preview-container {
     padding: 1rem 24rem;
     display: flex;
@@ -103,12 +96,21 @@ body {
 .preview-large {
     border-radius: 12px;
     width: 1fr;
-    height: 450;
+    height: 450px;
+    transition: all 0.5s ease;
+
 }
 
 .preview-large:hover {
     transform: scale(1.05);
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
+}
+
+.preview-link-button {
+    color: rgb(136, 136, 136);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .preview-small {
@@ -121,15 +123,17 @@ body {
 
 .preview-small-image {
     flex: 0 0 auto;
-    width: 17.46vw;             /* Adjust based on how many images you want visible */
+    width: 17.464vw;             /* Adjust based on how many images you want visible */
     height: auto;
     object-fit: contain;
     border-radius: 12px;
+    transition: all 0.5s ease;
+
 } 
 
 .preview-small-image:hover {
-    transform: scale(1.05);
-    transition: all 0.5s ease;
+    transform: scale(1.1);
+    /* transition: all 0.5s ease; */
 }
 
 /* Scroll to top butotn */
@@ -153,19 +157,55 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+.about-container {
+    padding: 8rem 24rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    height: 800px;
+}
+
+.about-title {
+    font-size: 72px;
+    color: var(--text);
+    padding-bottom: 100px;
+}
+
+.about-image {
+    width: auto;
+    height: 500px;
+    border-radius: 12px;
+}
+
+.about-description {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    text-align: justify;
+
+}
+
+.about-text {
+    height: 500px;
+    width: auto;
+}
+
+
 /* Contact styling */
 .contact-container {
-    padding: 1rem 24rem;
+    padding: 10rem 24rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    height: 500px;
 }
 
 .contact-title {
     font-size: 72px;
     color: var(--text);
 }
-
 
 /* Footer styling */
 .footer {
