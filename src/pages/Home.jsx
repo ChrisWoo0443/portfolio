@@ -13,7 +13,6 @@ const Home = () => {
         <div className = "home-container">
             <Navbar />
             <ScrollToTop />
-
             <header className="section-header" role="banner">
                 <div className="header-logo">Personal Collection</div>
                 <div className="header-content">
@@ -21,7 +20,6 @@ const Home = () => {
                 </div>
             </header>
             <Preview />  
-    
             <About />
             <Contact />
 

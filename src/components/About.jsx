@@ -11,8 +11,8 @@ export function About() {
                 <p class name="about-text"> 
                     Hello, I'm Chris Woo, a Computer Science with Business Applications student at the University
                     of California, Riverside. I am in pursuit of becoming a full-time software engineer
-                    who builds things that actually matter. Whether that be tools, apps, and experiences that 
-                    make life easier, better, or more enjoyable. I want to create softawre that reaches people,
+                    who builds things that actually matter, whether that be tools, apps, and experiences that 
+                    make life easier, better, or more enjoyable. I want to create software that reaches people,
                     is useful, and is impactful. Right now, I am continuing to sharpen my skills, build projects,
                     and explore new technologies and frameworks.
                 </p>

@@ -28,6 +28,7 @@ body {
     align-items: center;
     flex: 0 auto;
     border-bottom: 1px solid var(--baorder);
+    /* position: fixed; */
 }
 
 .navbar-logo {
@@ -176,12 +177,18 @@ body {
     width: auto;
     height: 500px;
     border-radius: 12px;
+    transition: all 0.5s ease;
+
+}
+
+.about-image:hover {
+    transform: scale(1.1);
 }
 
 .about-description {
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
     text-align: justify;
 
@@ -199,11 +206,20 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    height: 500px;
+
+    height: 900px;
 }
 
 .contact-title {
     font-size: 72px;
+    color: var(--text);
+}
+.contact-details {
+    line-height: 2rem;
+}
+
+.contact-description {
+    padding-top: 100px;
     color: var(--text);
 }
 
@@ -220,6 +236,27 @@ body {
     align-items: center;
     border-bottom: 1px solid var(--border);
 }
+
+.contact-email a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.contact-linkedin a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.contact-github a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.contact-instagram a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
 
 .footer-name {
     font-size: 14px;
