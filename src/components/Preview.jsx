@@ -5,10 +5,10 @@ import smallImage2 from "../images/natural_query.png";
 import smallImage3 from "../images/sms.png";
 
 const imageLinks = {
-    [largeImage]: "https://your-site.com/jobgpt",
-    [smallImage1]: "https://your-site.com/finger-paint",
-    [smallImage2]: "https://your-site.com/natural-query",
-    [smallImage3]: "https://your-site.com/sms",
+    [largeImage]: "https://github.com/hmumtazz/AI-Resume-Job-Compatibility-Scanner",
+    [smallImage1]: "https://github.com/ChrisWoo0443/FingerPaint",
+    [smallImage2]: "https://github.com/ChrisWoo0443/Natural-Query",
+    [smallImage3]: "https://github.com/ChrisWoo0443/SimpleSMSClassifier",
 };
 
 export function Preview() {

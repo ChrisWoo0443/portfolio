@@ -6,7 +6,7 @@ export function Navbar(){
         <nav className="navbar">
             <a href="/portfolio/" className="navbar-logo">Chris Woo</a>
             <div className="navbar-items">
-                <a href="/projects" className='navbar-link'>Projects</a>
+                <a href="/portfolio/projects" className='navbar-link'>Projects</a>
                 <a href="#about" className='navbar-link'>About</a>
                 <a href="#contact" className='navbar-link'>Contact</a>
             </div>
