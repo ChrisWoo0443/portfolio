@@ -1,23 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home.jsx'
+import Home from './pages/Home.jsx';
 import Projects from './pages/Projects.jsx';
 
 import './styles/styles.css';
 
-
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <div id="app">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
-        
       </div>
     </Router>
-  )
+  );
 }
 
 export default App;
