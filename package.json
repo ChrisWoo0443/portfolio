@@ -1,11 +1,14 @@
 {
-  "name": "frontend",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://ChrisWoo0443.github.io/portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b main -d build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
