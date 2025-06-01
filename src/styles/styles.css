@@ -54,7 +54,8 @@ body {
 }
 
 .navbar-link {
-    color: var(--text-secondary);
+    color: rgb(17, 17, 17);
+
     text-decoration: none;
 }
 
@@ -165,6 +166,7 @@ body {
     flex-direction: column;
     gap: 1rem;
     height: 800px;
+    margin-bottom: 5rem;
 }
 
 .about-title {
@@ -202,12 +204,11 @@ body {
 
 /* Contact styling */
 .contact-container {
-    padding: 10rem 24rem;
+    padding: 5rem 24rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
-    height: 900px;
+    height: 850px;
 }
 
 .contact-title {
@@ -221,20 +222,6 @@ body {
 .contact-description {
     padding-top: 100px;
     color: var(--text);
-}
-
-/* Footer styling */
-.footer {
-    padding: 1rem 24rem;
-    padding-top: 5rem;
-    display: flex;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--border);
 }
 
 .contact-email a {
@@ -257,6 +244,18 @@ body {
     text-decoration: none;
 }
 
+/* Footer styling */
+.footer {
+    padding: 1rem 24rem;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
 
 .footer-name {
     font-size: 14px;

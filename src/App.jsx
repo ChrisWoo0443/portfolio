@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Projects from './pages/Projects.jsx';
 
@@ -7,7 +7,8 @@ import './styles/styles.css';
 
 function App() {
   return (
-    <Router basename="/portfolio">
+    // <Router basename="/portfolio">
+    <Router>
       <div id="app">
         <Routes>
           <Route path="/" element={<Home />} />
