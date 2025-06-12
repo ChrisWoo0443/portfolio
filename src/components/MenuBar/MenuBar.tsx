@@ -5,7 +5,7 @@ interface MenuBarProps {
   appName?: string;
 }
 
-const MenuBar: React.FC<MenuBarProps> = ({ appName = 'Finder' }) => {
+const MenuBar: React.FC<MenuBarProps> = () => {
   // Current date and time for the center of the menu bar
   const [currentTime, setCurrentTime] = React.useState<string>('');
   const [currentDate, setCurrentDate] = React.useState<string>('');
