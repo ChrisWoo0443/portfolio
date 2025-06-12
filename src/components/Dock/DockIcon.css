@@ -1,0 +1,44 @@
+.dock-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 5px; /* Increased padding from 5px to 10px vertical and 15px horizontal */
+  position: relative;
+  cursor: pointer;
+}
+
+.dock-icon-image {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  transition: filter 0.3s ease;
+}
+
+.dock-icon:hover .dock-icon-image {
+  filter: drop-shadow(0 6px 12px rgba(99, 177, 255, 0.5));
+}
+
+.dock-icon-label {
+  position: absolute;
+  top: -35px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dock-icon:hover .dock-icon-label {
+  opacity: 1;
+  transform: translateY(0);
+}

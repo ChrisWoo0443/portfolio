@@ -1,0 +1,36 @@
+.window-content {
+  padding: 16px;
+  height: calc(100% - 32px); /* Subtract header height */
+  overflow: auto;
+  background-color: #fff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Scrollbar styles */
+.window-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.window-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.window-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.window-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .window-content {
+    padding: 12px;
+    height: calc(100% - 28px); /* Adjust for smaller header */
+  }
+}

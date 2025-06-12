@@ -1,0 +1,36 @@
+.dock-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  z-index: 1000;
+  pointer-events: none; /* Allow clicks to pass through the container but not the dock */
+}
+
+.dock {
+  display: flex;
+  align-items: flex-end;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 8px 14px; 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  pointer-events: auto; /* Re-enable pointer events for the dock itself */
+  gap: 7px; /* Added gap between dock icons */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dock {
+    padding: 4px 8px;
+  }
+  
+  .dock-icon-image {
+    width: 40px;
+    height: 40px;
+  }
+}

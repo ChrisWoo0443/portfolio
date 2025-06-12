@@ -1,0 +1,59 @@
+.window {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease;
+}
+
+.window.active {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Resize handles */
+.resize-handle {
+  position: absolute;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.resize-handle-right {
+  width: 6px;
+  height: calc(100% - 12px);
+  top: 6px;
+  right: 0;
+  cursor: ew-resize;
+}
+
+.resize-handle-bottom {
+  width: calc(100% - 12px);
+  height: 6px;
+  bottom: 0;
+  left: 6px;
+  cursor: ns-resize;
+}
+
+.resize-handle-bottom-right {
+  width: 12px;
+  height: 12px;
+  bottom: 0;
+  right: 0;
+  cursor: nwse-resize;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .window {
+    width: 90vw !important;
+    height: 80vh !important;
+    left: 5vw !important;
+    top: 10vh !important;
+  }
+  
+  .resize-handle {
+    display: none;
+  }
+}

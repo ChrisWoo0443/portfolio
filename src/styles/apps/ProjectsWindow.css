@@ -1,0 +1,152 @@
+/* ProjectsWindow.css */
+
+.projects-window {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 20px;
+  overflow-y: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+.projects-header {
+  margin-bottom: 25px;
+}
+
+.projects-header h1 {
+  font-size: 28px;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.projects-header p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.category-button {
+  padding: 8px 16px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-button:hover {
+  background-color: #e0e0e0;
+}
+
+.category-button.active {
+  background-color: #0066cc;
+  color: white;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.project-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: white;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.project-category {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+  margin: 0 0 12px;
+}
+
+.project-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0 0 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.project-link:hover {
+  background-color: #0055aa;
+}
+
+.no-projects {
+  text-align: center;
+  padding: 40px 0;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

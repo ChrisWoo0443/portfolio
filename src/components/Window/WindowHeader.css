@@ -1,0 +1,49 @@
+.window-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  height: 32px;
+  background: linear-gradient(to bottom, #f9f9f9, #e8e8e8);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: 1px solid #d1d1d1;
+  cursor: move;
+  user-select: none;
+  position: relative;
+}
+
+.window-header.active {
+  background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
+}
+
+.window-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 13px;
+  color: #333;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.window-header-spacer {
+  width: 62px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .window-header {
+    height: 28px;
+  }
+  
+  .window-title {
+    font-size: 12px;
+  }
+}

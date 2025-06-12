@@ -1,0 +1,25 @@
+.desktop {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 24px; /* Add padding for the menu bar */
+}
+
+.desktop-icons-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .desktop-icons-container {
+    padding: 10px;
+  }
+}
