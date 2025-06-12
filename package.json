@@ -14,12 +14,14 @@
   },
   "dependencies": {
     "@react-three/fiber": "^9.1.2",
+    "@types/react-pdf": "^5.0.7",
     "@types/uuid": "^10.0.0",
     "framer-motion": "^12.17.0",
     "motion": "^12.17.0",
     "react": "^19.1.0",
     "react-bits": "^1.0.5",
     "react-dom": "^19.1.0",
+    "react-pdf": "^9.2.1",
     "three": "^0.177.0",
     "uuid": "^11.1.0"
   },

@@ -6,7 +6,35 @@ import type { App } from '../types';
 // Note: These components will be implemented later
 const AboutWindow: React.FC = () => <div>About Me Content</div>;
 const ContactsWindow: React.FC = () => <div>Contacts Content</div>;
-const ResumeWindow: React.FC = () => <div>Resume Content</div>;
+
+// Resume component using iframe to display Google Drive document
+const ResumeWindow: React.FC = () => {
+  const googleDriveFileUrl = 'https://drive.google.com/file/d/1nk7WZHgoqA-GiNROld8x6Bj4j-MHll3p/preview';
+  
+  return (
+    <div style={{ 
+      width: '100%', 
+      height: '100%', 
+      display: 'flex',
+      flexDirection: 'column',
+      overflow: 'hidden' 
+    }}>
+      <iframe 
+        src={googleDriveFileUrl}
+        style={{ 
+          width: '100%', 
+          height: '100%', 
+          border: 'none',
+          flexGrow: 1,
+          minHeight: '700px'
+        }}
+        title="Resume"
+        allowFullScreen
+        frameBorder="0"
+      />
+    </div>
+  );
+};
 
 
 import contactsIcon from '../assets/icons/contacts.png';
