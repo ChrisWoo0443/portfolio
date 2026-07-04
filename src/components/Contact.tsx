@@ -4,7 +4,7 @@ import AnimatedLink from "./AnimatedLink";
 
 export default function Contact() {
   return (
-    <Section id="contact" label="05 — Contact" className="pb-12">
+    <Section id="contact" label="06 — Contact" className="pb-12">
       <div className="space-y-10">
         <motion.h2
           initial={{ opacity: 0, y: 16 }}

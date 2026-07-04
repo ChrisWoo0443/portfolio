@@ -52,7 +52,7 @@ const groups: { label: string; items: string[] }[] = [
 
 export default function Skills() {
   return (
-    <Section label="04 — Stack">
+    <Section label="05 — Stack">
       <dl className="grid grid-cols-1 gap-10 md:grid-cols-[10rem_1fr] md:gap-x-10 md:gap-y-6">
         {groups.map((g) => (
           <div key={g.label} className="contents">
