@@ -150,9 +150,10 @@ body {
   }
 }
 
-/* drafting-crosshair cursor */
-html.crosshair-on,
-html.crosshair-on * {
+/* drafting-crosshair cursor: hide the native cursor only while the
+   crosshair is actually visible (load/refocus keep the native cursor) */
+html.crosshair-live,
+html.crosshair-live * {
   cursor: none;
 }
 

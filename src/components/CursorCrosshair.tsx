@@ -16,11 +16,6 @@ export default function CursorCrosshair() {
     };
   }, []);
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("crosshair-on", active);
-    return () => document.documentElement.classList.remove("crosshair-on");
-  }, [active]);
-
   return active ? <Overlay /> : null;
 }
 
@@ -41,7 +36,8 @@ function labelFor(target: Element): string {
 }
 
 function Overlay() {
-  const root = useRef<HTMLDivElement>(null);
+  const linesRoot = useRef<HTMLDivElement>(null);
+  const markRoot = useRef<HTMLDivElement>(null);
   const lineH = useRef<HTMLDivElement>(null);
   const lineV = useRef<HTMLDivElement>(null);
   const dot = useRef<HTMLDivElement>(null);
@@ -50,25 +46,44 @@ function Overlay() {
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
+      const linesEl = linesRoot.current;
+      const markEl = markRoot.current;
+      const lineHEl = lineH.current;
+      const lineVEl = lineV.current;
+      const dotEl = dot.current;
+      const tagEl = tag.current;
+      if (!linesEl || !markEl || !lineHEl || !lineVEl || !dotEl || !tagEl) return;
       const x = Math.round(e.clientX);
       const y = Math.round(e.clientY);
-      root.current!.style.opacity = "1";
-      lineH.current!.style.transform = `translateY(${y}px)`;
-      lineV.current!.style.transform = `translateX(${x}px)`;
-      dot.current!.style.transform = `translate(${x - 1.5}px, ${y - 1.5}px)`;
-      tag.current!.style.transform = `translate(${x + 12}px, ${y + 12}px)`;
+      document.documentElement.classList.add("crosshair-live");
+      linesEl.style.opacity = "1";
+      markEl.style.opacity = "1";
+      lineHEl.style.transform = `translateY(${y}px)`;
+      lineVEl.style.transform = `translateX(${x}px)`;
+      dotEl.style.transform = `translate(${x - 1.5}px, ${y - 1.5}px)`;
+      tagEl.style.transform = `translate(${x + 12}px, ${y + 12}px)`;
       if (!hoverLabel.current) {
-        tag.current!.textContent = `${x} · ${y}`;
+        tagEl.textContent = `${x} · ${y}`;
       }
     };
     const onOver = (e: MouseEvent) => {
+      const linesEl = linesRoot.current;
+      const markEl = markRoot.current;
+      const tagEl = tag.current;
+      if (!linesEl || !markEl || !tagEl) return;
       const label = e.target instanceof Element ? labelFor(e.target) : "";
       hoverLabel.current = label;
-      if (label && tag.current) tag.current.textContent = label;
-      root.current?.classList.toggle("crosshair-hover", label !== "");
+      if (label) tagEl.textContent = label;
+      linesEl.classList.toggle("crosshair-hover", label !== "");
+      markEl.classList.toggle("crosshair-hover", label !== "");
     };
     const hide = () => {
-      if (root.current) root.current.style.opacity = "0";
+      const linesEl = linesRoot.current;
+      const markEl = markRoot.current;
+      if (!linesEl || !markEl) return;
+      document.documentElement.classList.remove("crosshair-live");
+      linesEl.style.opacity = "0";
+      markEl.style.opacity = "0";
     };
     const onOut = (e: MouseEvent) => {
       if (!e.relatedTarget) hide();
@@ -82,22 +97,31 @@ function Overlay() {
       document.removeEventListener("mouseover", onOver);
       document.removeEventListener("mouseout", onOut);
       window.removeEventListener("blur", hide);
+      document.documentElement.classList.remove("crosshair-live");
     };
   }, []);
 
   return (
-    <div
-      ref={root}
-      aria-hidden
-      className="pointer-events-none fixed inset-0 z-40 opacity-0 transition-opacity duration-300"
-    >
-      <div ref={lineH} className="cx-line absolute left-0 top-0 h-px w-full will-change-transform" />
-      <div ref={lineV} className="cx-line absolute left-0 top-0 h-full w-px will-change-transform" />
-      <div ref={dot} className="absolute left-0 top-0 h-[3px] w-[3px] rounded-full bg-ink will-change-transform" />
+    <>
       <div
-        ref={tag}
-        className="cx-tag absolute left-0 top-0 whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.18em] will-change-transform"
-      />
-    </div>
+        ref={linesRoot}
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-40 opacity-0 transition-opacity duration-300"
+      >
+        <div ref={lineH} className="cx-line absolute left-0 top-0 h-px w-full will-change-transform" />
+        <div ref={lineV} className="cx-line absolute left-0 top-0 h-full w-px will-change-transform" />
+      </div>
+      <div
+        ref={markRoot}
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[60] opacity-0 transition-opacity duration-300"
+      >
+        <div ref={dot} className="absolute left-0 top-0 h-[3px] w-[3px] rounded-full bg-ink will-change-transform" />
+        <div
+          ref={tag}
+          className="cx-tag absolute left-0 top-0 whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.18em] will-change-transform"
+        />
+      </div>
+    </>
   );
 }
