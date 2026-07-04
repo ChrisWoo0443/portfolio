@@ -149,3 +149,19 @@ body {
     opacity: 0;
   }
 }
+
+/* drafting-crosshair cursor */
+html.crosshair-on,
+html.crosshair-on * {
+  cursor: none;
+}
+
+.cx-line {
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+  transition: background 0.25s ease;
+}
+
+.cx-tag {
+  color: var(--muted);
+  transition: color 0.25s ease;
+}
