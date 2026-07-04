@@ -24,12 +24,29 @@ export default function CursorCrosshair() {
   return active ? <Overlay /> : null;
 }
 
+function labelFor(target: Element): string {
+  const custom = target.closest<HTMLElement>("[data-cursor]");
+  if (custom?.dataset.cursor) return custom.dataset.cursor;
+  const link = target.closest("a");
+  if (link) {
+    const href = link.getAttribute("href") ?? "";
+    if (href.startsWith("mailto:")) return "email ↗";
+    if (href.startsWith("tel:")) return "call →";
+    if (href.startsWith("#")) return "go →";
+    if (link.target === "_blank") return "open ↗";
+    return "open →";
+  }
+  if (target.closest("button")) return "view +";
+  return "";
+}
+
 function Overlay() {
   const root = useRef<HTMLDivElement>(null);
   const lineH = useRef<HTMLDivElement>(null);
   const lineV = useRef<HTMLDivElement>(null);
   const dot = useRef<HTMLDivElement>(null);
   const tag = useRef<HTMLDivElement>(null);
+  const hoverLabel = useRef("");
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
@@ -40,7 +57,15 @@ function Overlay() {
       lineV.current!.style.transform = `translateX(${x}px)`;
       dot.current!.style.transform = `translate(${x - 1.5}px, ${y - 1.5}px)`;
       tag.current!.style.transform = `translate(${x + 12}px, ${y + 12}px)`;
-      tag.current!.textContent = `${x} · ${y}`;
+      if (!hoverLabel.current) {
+        tag.current!.textContent = `${x} · ${y}`;
+      }
+    };
+    const onOver = (e: MouseEvent) => {
+      const label = e.target instanceof Element ? labelFor(e.target) : "";
+      hoverLabel.current = label;
+      if (label && tag.current) tag.current.textContent = label;
+      root.current?.classList.toggle("crosshair-hover", label !== "");
     };
     const hide = () => {
       if (root.current) root.current.style.opacity = "0";
@@ -49,10 +74,12 @@ function Overlay() {
       if (!e.relatedTarget) hide();
     };
     document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseover", onOver);
     document.addEventListener("mouseout", onOut);
     window.addEventListener("blur", hide);
     return () => {
       document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseover", onOver);
       document.removeEventListener("mouseout", onOut);
       window.removeEventListener("blur", hide);
     };

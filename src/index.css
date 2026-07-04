@@ -165,3 +165,11 @@ html.crosshair-on * {
   color: var(--muted);
   transition: color 0.25s ease;
 }
+
+.crosshair-hover .cx-line {
+  background: color-mix(in srgb, var(--ink) 28%, transparent);
+}
+
+.crosshair-hover .cx-tag {
+  color: var(--ink);
+}
