@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Local planning docs and session files
+.superpowers/
+docs/superpowers/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
