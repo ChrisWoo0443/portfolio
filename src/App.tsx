@@ -9,11 +9,13 @@ import Research from "./components/Research";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import CursorCrosshair from "./components/CursorCrosshair";
 
 export default function App() {
   useSmoothAnchors(72);
   return (
     <>
+      <CursorCrosshair />
       <Nav />
       <main className="mx-auto max-w-3xl px-6">
         <Hero />
