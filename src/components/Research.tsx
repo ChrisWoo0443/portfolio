@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import Section from "./Section";
+import AnimatedLink from "./AnimatedLink";
 
 type Paper = {
   status: string;
@@ -7,6 +8,7 @@ type Paper = {
   title: string;
   authors: string[];
   description: string;
+  href?: string;
 };
 
 const papers: Paper[] = [
@@ -18,6 +20,7 @@ const papers: Paper[] = [
     authors: ["Chris Woo", "Jessica Chen", "Jacob Dang", "Archana Vaidheeswaran"],
     description:
       "A controlled empirical study of MITR, a representation-level regularizer that discourages adjacent transformer layers from making redundant residual contributions, testing whether more distinct per-layer computation reduces logical contradictions in binary QA. Across an estimator screen, InfoNCE scaling to BERT and RoBERTa, a weight sweep, and five-seed replication, MITR's gains are small and unstable compared to direct supervision on negated examples.",
+    href: "https://openreview.net/pdf?id=gUuGmzkxBP"
   },
 ];
 
@@ -58,6 +61,14 @@ export default function Research() {
               <p className="mt-4 max-w-xl text-[15px] leading-[1.7] text-ink/80">
                 {p.description}
               </p>
+
+              {p.href && (
+                <div className="mt-4">
+                  <AnimatedLink href={p.href} external>
+                    Paper
+                  </AnimatedLink>
+                </div>
+              )}
             </div>
           </motion.li>
         ))}
