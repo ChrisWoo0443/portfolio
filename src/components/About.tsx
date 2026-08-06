@@ -31,10 +31,10 @@ export default function About() {
             designed n8n agent workflows for home-goods trend analytics at{" "}
             <span className="font-medium text-ink">Wayfair</span>. Before
             that I did NLP research at{" "}
-            <span className="font-medium text-ink">Algoverse</span> — cutting
-            transformer contradiction rates by 4.8&nbsp;pp with a
-            mutual-information regularizer. I like the boring parts: evals,
-            retrieval quality, and the glue in between.
+            <span className="font-medium text-ink">Algoverse</span> —
+            publishing a paper on mutual-information regularization for
+            logical consistency at the SeT-LLM workshop
+            @&nbsp;KDD&nbsp;2026.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -42,8 +42,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
           >
-            Outside of work I write shell tools in Rust, ship small Electron
-            apps, and read more papers than I probably need to.
+            Outside of work I enjoy working on side projects, playing videogames, and going out to try new foods.
           </motion.p>
         </div>
 
