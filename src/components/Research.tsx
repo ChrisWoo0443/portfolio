@@ -11,8 +11,8 @@ type Paper = {
 
 const papers: Paper[] = [
   {
-    status: "Under review",
-    venue: "KDD 2026",
+    status: "Published",
+    venue: "SeT-llm KDD 2026",
     title:
       "Mutual Information Transfer Regularization for Logical Consistency: A Controlled Empirical Study",
     authors: ["Chris Woo", "Jessica Chen", "Jacob Dang", "Archana Vaidheeswaran"],
